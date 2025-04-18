@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Crime Hotspot Prediction{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Predict Crime Hotspots</h1>
+        <p>Empowering Law Enforcement with AI-Driven Insights</p>
+        <a href="{{ url_for('login') }}" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features" id="features">
+    <div class="feature-card">
+        <i class="fas fa-map-marked-alt fa-3x" style="color: #1A237E; margin-bottom: 1rem;"></i>
+        <h3>Real-Time Hotspot Mapping</h3>
+        <p>Visualize crime hotspots with interactive heatmaps powered by machine learning.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-chart-line fa-3x" style="color: #1A237E; margin-bottom: 1rem;"></i>
+        <h3>Predictive Analytics</h3>
+        <p>Forecast crime patterns using advanced statistical modeling techniques.</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-shield-alt fa-3x" style="color: #1A237E; margin-bottom: 1rem;"></i>
+        <h3>Risk Assessment</h3>
+        <p>Identify high-risk areas to optimize resource allocation and preventive measures.</p>
+    </div>
+</section>
+
+<!-- Map Section -->
+<div id="map" style="height: 400px; width: 100%; margin: 20px 0;"></div>
+
+<!-- About Preview Section -->
+<section class="about-section" id="about">
+    <div class="about-content">
+        <h2>About Our System</h2>
+        <p>Our advanced crime prediction system uses state-of-the-art machine learning algorithms to analyze historical crime patterns and predict potential hotspots across India.</p>
+        <p>Developed in collaboration with law enforcement agencies, our solution helps in proactive policing and resource allocation.</p>
+    </div>
+    <div class="about-image">
+        <img src="{{ url_for('static', filename='img/about_img.jpg') }}" alt="Crime Analysis">
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="{{ url_for('contact') }}" method="post">
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <textarea rows="5" name="message" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="cta-button">Send Message</button>
+    </form>
+</section>
+{% endblock %}
